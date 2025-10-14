@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AROMADICOFFE.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AROMADICOFFE.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    Title="AROMADICOFFE">
+
+    <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:Home}"
+            Route="Home" />
+
+        <ShellContent
+            Title="Menu"
+            ContentTemplate="{DataTemplate local:Menu}"
+            Route="Menu" />
+
+        <ShellContent
+            Title="Compras"
+            ContentTemplate="{DataTemplate local:Carritos}"
+            Route="Carritos" />
+
+        <ShellContent
+            Title="Iniciar Sesion"
+            ContentTemplate="{DataTemplate local:InicioSesion}"
+            Route="InicioSesion" />
+
+        <ShellContent
+            Title="Mi perfil"
+            ContentTemplate="{DataTemplate local:Miperfil}"
+            Route="Miperfil" />
+    </FlyoutItem>
+
+</Shell>
