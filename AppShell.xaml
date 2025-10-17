@@ -8,31 +8,93 @@
     Shell.TabBarIsVisible="False"
     Title="AROMADICOFFE">
 
+    <Shell.FlyoutBackgroundColor>
+        <Color>#211B17</Color>
+    </Shell.FlyoutBackgroundColor>
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="30, 40, 30, 20" Spacing="20">
+            <Border 
+                StrokeShape="Ellipse" 
+                Padding="0" 
+                WidthRequest="120" 
+                HeightRequest="120"
+                HorizontalOptions="Center" 
+                StrokeThickness="2" 
+                Stroke="#795548">
+                <Image 
+                    Source="header.jpeg" 
+                    Aspect="AspectFill"
+                    />
+            </Border>
+
+            <BoxView 
+                HeightRequest="1" 
+                Color="#4E342E" 
+                Margin="0, 10, 0, 0" 
+                HorizontalOptions="FillAndExpand"/>
+
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="20, 15" ColumnDefinitions="40, *">
+
+                <Image 
+                    Grid.Column="0" 
+                    Source="{Binding Icon}" 
+                    WidthRequest="24" 
+                    HeightRequest="24"
+                    Aspect="AspectFit"
+                    VerticalOptions="Center"
+                    />
+
+                <Label 
+                    Grid.Column="1" 
+                    Text="{Binding Title}" 
+                    FontSize="16" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    Margin="15, 0, 0, 0"
+                    VerticalOptions="Center"
+                    />
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+
     <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-            Title="Home"
+            Title="INICIO"
             ContentTemplate="{DataTemplate local:Home}"
-            Route="Home" />
+            Route="Home"
+            Icon="logo1.png"/>
 
         <ShellContent
-            Title="Menu"
+            Title="NUESTRO MENÚ"
             ContentTemplate="{DataTemplate local:Menu}"
-            Route="Menu" />
+            Route="Menu"
+            Icon="logo1.png"/>
 
         <ShellContent
-            Title="Compras"
+            Title="MI CARRITO"
             ContentTemplate="{DataTemplate local:Carritos}"
-            Route="Carritos" />
+            Route="Carritos"
+            Icon="logo1.png"/>
 
         <ShellContent
-            Title="Iniciar Sesion"
-            ContentTemplate="{DataTemplate local:InicioSesion}"
-            Route="InicioSesion" />
+            Title="INICIAR SESIÓN"
+            ContentTemplate="{DataTemplate local:Login}"
+            Route="Iniciar Sesión"
+            Icon="logo1.png"/>
 
         <ShellContent
-            Title="Mi perfil"
+            Title="CONFIGURACIÓN"
             ContentTemplate="{DataTemplate local:Miperfil}"
-            Route="Miperfil" />
+            Route="Miperfil"
+            Icon="logo1.png"/>
     </FlyoutItem>
 
 </Shell>
