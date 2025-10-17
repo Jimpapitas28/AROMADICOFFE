@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AROMADICOFFE.SegundaPagina"
+             Title="SegundaPagina">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="☕ Cafés Calientes" 
+               FontSize="26" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+            <!-- Seleccionar tipo de café -->
+            <Label Text="Selecciona el tipo de café:" FontSize="18"/>
+            <Picker x:Name="CafePicker" Title="Elige un café">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Espresso</x:String>
+                        <x:String>Latte</x:String>
+                        <x:String>Cappuccino</x:String>
+                        <x:String>Americano</x:String>
+                        <x:String>Mocha</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Cantidad de azúcar -->
+            <Label Text="Cantidad de azúcar (cucharaditas):" FontSize="18"/>
+            <Stepper x:Name="AzucarStepper" Minimum="0" Maximum="5" Increment="1" ValueChanged="AzucarStepper_ValueChanged"/>
+            <Label x:Name="AzucarLabel" Text="Azúcar: 0 cucharaditas" FontSize="16"/>
+
+            <!-- Cantidad de cafés -->
+            <Label Text="Cantidad de cafés:" FontSize="18"/>
+            <Stepper x:Name="CantidadStepper" Minimum="1" Maximum="10" Increment="1" ValueChanged="CantidadStepper_ValueChanged"/>
+            <Label x:Name="CantidadLabel" Text="Cantidad: 1 café" FontSize="16"/>
+
+            <!-- Precio total -->
+            <Label x:Name="TotalLabel" 
+               Text="Total: $0.00" 
+               FontSize="18" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+            <!-- Botón de confirmar -->
+            <Button Text="Confirmar Pedido"
+                BackgroundColor="#795548"
+                TextColor="White"
+                FontAttributes="Bold"
+                Clicked="Button_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

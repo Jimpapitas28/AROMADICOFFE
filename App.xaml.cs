@@ -8,7 +8,7 @@ namespace AROMADICOFFE
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new MainPage();
         }
     }
 }
