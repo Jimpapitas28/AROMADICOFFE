@@ -3,10 +3,269 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AROMADICOFFE.Pages.Home"
              Title="">
-    <VerticalStackLayout>
-        <Label 
-            Text="aqui va el carrusel uwu"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BrandColor">#6F4E37</Color>
+            <Color x:Key="AccentColor">#C89B3C</Color>
+            <Color x:Key="CategoryBgColor">#F0EAD6</Color>
+            <Style TargetType="Label" x:Key="HeaderStyle">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BrandColor}" />
+                <Setter Property="Margin" Value="10, 15, 0, 5" />
+            </Style>
+
+            <Style x:Key="AccordionTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="Padding" Value="10, 0, 0, 10"/>
+                <Setter Property="Rotation" Value="-90"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="CardTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <Grid Padding="20, 10" RowDefinitions="Auto, Auto">
+                <Image Grid.Row="0" HorizontalOptions="End" Source="perfil.png" HeightRequest="40" WidthRequest="40" Aspect="AspectFill" />
+                <VerticalStackLayout Grid.Row="1" Spacing="2">
+                    <Label Text="¡Buenos días!" FontSize="16" TextColor="Gray" />
+                    <Label Text="¿Qué te apetece hoy?" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource BrandColor}" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Frame Margin="20, 0, 20, 5" Padding="10" CornerRadius="25" HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Entry x:Name="SearchEntry"
+                           Placeholder="Buscar café, postre o promoción..."
+                           HorizontalOptions="FillAndExpand"
+                           ClearButtonVisibility="WhileEditing"
+                           TextChanged="SearchEntry_TextChanged" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Label Text="Nuestros Momentos" 
+                   Style="{StaticResource HeaderStyle}" 
+                   Margin="20, 10, 0, 10"/>
+
+            <Grid x:Name="AccordionGrid" 
+                  ColumnDefinitions="Auto, Auto, Auto, Auto" 
+                  HeightRequest="225"
+                  Margin="20, 0, 20, 20"
+                  HorizontalOptions="FillAndExpand">
+
+                <Border Grid.Column="0">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped" CommandParameter="0" />
+                    </Border.GestureRecognizers>
+                    <Grid>
+                        <Image Source="carru1.jpg" Aspect="AspectFill" x:Name="Img0" Opacity="0.5" />
+                        <Label Text="" Style="{StaticResource AccordionTitleStyle}" />
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped" CommandParameter="1" />
+                    </Border.GestureRecognizers>
+                    <Grid>
+                        <Image Source="carru3.jpg" Aspect="AspectFill" x:Name="Img1" Opacity="0.5" />
+                        <Label Text="" Style="{StaticResource AccordionTitleStyle}" />
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped" CommandParameter="2" />
+                    </Border.GestureRecognizers>
+                    <Grid>
+                        <Image Source="carru5.jpg" Aspect="AspectFill" x:Name="Img2" Opacity="0.5" />
+                        <Label Text="" Style="{StaticResource AccordionTitleStyle}" />
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="3">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped" CommandParameter="3" />
+                    </Border.GestureRecognizers>
+                    <Grid>
+                        <Image Source="carru4.jpg" Aspect="AspectFill" x:Name="Img3" Opacity="0.5" />
+                        <Label Text="" Style="{StaticResource AccordionTitleStyle}" />
+                    </Grid>
+                </Border>
+
+            </Grid>
+
+            <Label Text="¡Oferta Exclusiva!" Style="{StaticResource HeaderStyle}" Margin="20, 0, 0, 10"/>
+
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{StaticResource AccentColor}" CornerRadius="10" Padding="15">
+                <HorizontalStackLayout Spacing="15">
+                    <VerticalStackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Capuchino Grande al 50%!" FontSize="20" FontAttributes="Bold" TextColor="White" />
+                        <Label Text="Solo por tiempo limitado." FontSize="14" TextColor="White" />
+
+                        <HorizontalStackLayout Spacing="10" Margin="0, 10, 0, 0" HorizontalOptions="Start">
+                            <Button Text="Lo quiero" 
+                                    BackgroundColor="{StaticResource CategoryBgColor}" 
+                                    TextColor="{StaticResource BrandColor}" 
+                                    CornerRadius="20" 
+                                    WidthRequest="120" 
+                                    HeightRequest="35"
+                                    Clicked="LoQuieroButton_Clicked" />
+
+                            <ImageButton x:Name="FavoriteButton"
+                                         Source="heart_outline.png" 
+                                         WidthRequest="20"
+                                         HeightRequest="20"
+                                         BackgroundColor="Transparent"
+                                         Clicked="FavoriteButton_Clicked" />
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                    <Image Source="capuchino_promo.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Label Text="Explora Categorías" Style="{StaticResource HeaderStyle}" Margin="20, 0, 0, 0"/>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" HeightRequest="150" Margin="10, 0, 0, 10">
+                <FlexLayout x:Name="CategoriesLayout" Direction="Row" Wrap="NoWrap">
+
+                    <VerticalStackLayout Margin="2, 9" WidthRequest="85" HorizontalOptions="Center">
+                        <Frame CornerRadius="45" HeightRequest="85" WidthRequest="85" BackgroundColor="{StaticResource CategoryBgColor}">
+                            <Label Text="☕" FontSize="32" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        </Frame>
+                        <Label Text="Calientes" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource BrandColor}" Margin="0, 5, 0, 0" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Margin="2, 9" WidthRequest="85" HorizontalOptions="Center">
+                        <Frame CornerRadius="45" HeightRequest="85" WidthRequest="85" BackgroundColor="{StaticResource CategoryBgColor}">
+                            <Label Text="🧋" FontSize="32" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        </Frame>
+                        <Label Text="Frios" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource BrandColor}" Margin="0, 5, 0, 0" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Margin="2, 9" WidthRequest="85" HorizontalOptions="Center">
+                        <Frame CornerRadius="45" HeightRequest="85" WidthRequest="85" BackgroundColor="{StaticResource CategoryBgColor}">
+                            <Label Text="🍰" FontSize="32" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        </Frame>
+                        <Label Text="Postres" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource BrandColor}" Margin="0, 5, 0, 0" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Margin="2, 9" WidthRequest="85" HorizontalOptions="Center">
+                        <Frame CornerRadius="45" HeightRequest="85" WidthRequest="85" BackgroundColor="{StaticResource CategoryBgColor}">
+                            <Label Text="🥙" FontSize="32" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        </Frame>
+                        <Label Text="Snacks" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource BrandColor}" Margin="0, 5, 0, 0" />
+                    </VerticalStackLayout>
+
+                </FlexLayout>
+            </ScrollView>
+
+            <Label Text="Lo Más Popular" Style="{StaticResource HeaderStyle}" Margin="20, 0, 0, 0"/>
+
+            <CollectionView HeightRequest="220" Margin="20, 5, 20, 20">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="15" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.Header>
+                    <HorizontalStackLayout Spacing="15">
+
+                        <Border WidthRequest="150" HeightRequest="200"
+                                StrokeShape="RoundRectangle 10" 
+                                StrokeThickness="0"
+                                Padding="0">
+                            <Grid>
+                                <Image Source="frappe_choc.jpg" Aspect="AspectFill" />
+                                <BoxView Color="#000000" Opacity="0.5" 
+                                         VerticalOptions="End" 
+                                         HeightRequest="50" />
+                                <Label Text="Frappé de Chocolate" 
+                                       Style="{StaticResource CardTextStyle}" 
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </Border>
+
+                        <Border WidthRequest="150" HeightRequest="200"
+                                StrokeShape="RoundRectangle 10" 
+                                StrokeThickness="0"
+                                Padding="0">
+                            <Grid>
+                                <Image Source="capuchinito.jpg" Aspect="AspectFill" />
+                                <BoxView Color="#000000" Opacity="0.5" 
+                                         VerticalOptions="End" 
+                                         HeightRequest="50" />
+                                <Label Text="Capuchino de la Casa" 
+                                       Style="{StaticResource CardTextStyle}" 
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </Border>
+
+                        <Border WidthRequest="150" HeightRequest="200"
+                                StrokeShape="RoundRectangle 10" 
+                                StrokeThickness="0"
+                                Padding="0">
+                            <Grid>
+                                <Image Source="patel.jpg" Aspect="AspectFill" />
+                                <BoxView Color="#000000" Opacity="0.5" 
+                                         VerticalOptions="End" 
+                                         HeightRequest="50" />
+                                <Label Text="Pastel de Chocolate" 
+                                       Style="{StaticResource CardTextStyle}" 
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </Border>
+
+                        <Border WidthRequest="150" HeightRequest="200"
+                                StrokeShape="RoundRectangle 10" 
+                                StrokeThickness="0"
+                                Padding="0">
+                            <Grid>
+                                <Image Source="sandw.jpg" Aspect="AspectFill" />
+                                <BoxView Color="#000000" Opacity="0.5" 
+                                         VerticalOptions="End" 
+                                         HeightRequest="50" />
+                                <Label Text="Sandwich Gourmet" 
+                                       Style="{StaticResource CardTextStyle}" 
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </Border>
+
+                    </HorizontalStackLayout>
+                </CollectionView.Header>
+
+            </CollectionView>
+
+            <VerticalStackLayout BackgroundColor="Black" Padding="20" Spacing="15">
+
+                <Label Text="¡Continúa explorando este mundo de delicias!" 
+                       TextColor="White" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       HorizontalTextAlignment="Center"/>
+
+                <BoxView HeightRequest="1" Color="Gray" Margin="0, 5, 0, 5" />
+                <Label Text="© 2025 Aroma Di' Café App. Todos los derechos reservados." 
+                       TextColor="LightGray" 
+                       FontSize="10" 
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
