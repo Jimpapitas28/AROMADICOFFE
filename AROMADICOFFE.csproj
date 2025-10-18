@@ -111,7 +111,7 @@
 	  <MauiXaml Update="Pages\Snacks.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="SegundaPagina.xaml">
+	  <MauiXaml Update="Pages\SegundaPagina.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

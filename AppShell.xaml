@@ -6,10 +6,10 @@
     xmlns:local="clr-namespace:AROMADICOFFE.Pages"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="False"
-    Title="AROMADICOFFE">
+    Title="">
 
     <Shell.FlyoutBackgroundColor>
-        <Color>#211B17</Color>
+        <Color>#fff6ed</Color>
     </Shell.FlyoutBackgroundColor>
 
     <Shell.FlyoutHeader>
@@ -54,7 +54,7 @@
                     Grid.Column="1" 
                     Text="{Binding Title}" 
                     FontSize="16" 
-                    TextColor="White" 
+                    TextColor="#292718" 
                     FontAttributes="Bold"
                     Margin="15, 0, 0, 0"
                     VerticalOptions="Center"
@@ -70,7 +70,8 @@
             Title="INICIO"
             ContentTemplate="{DataTemplate local:Home}"
             Route="Home"
-            Icon="logo1.png"/>
+            Icon="logo1.png"
+            Shell.NavBarIsVisible="False"/>
 
         <ShellContent
             Title="NUESTRO MENÚ"
