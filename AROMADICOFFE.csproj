@@ -69,9 +69,6 @@
 	  <Compile Update="Pages\HotCoffee.xaml.cs">
 	    <DependentUpon>HotCoffee.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\SignIn.xaml.cs">
-	    <DependentUpon>SignIn.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Pages\Pago.xaml.cs">
 	    <DependentUpon>Pago.xaml</DependentUpon>
 	  </Compile>
@@ -88,9 +85,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\IceCoffe.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\SignIn.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Login.xaml">
