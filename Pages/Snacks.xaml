@@ -2,11 +2,128 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AROMADICOFFE.Pages.Snacks"
+             BackgroundColor="#fff6ed"
              Title="">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="15">
+            <Label Text="Snacks" 
+               FontSize="33"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+            <!-- Snack 1-->
+            <Frame Padding="15" CornerRadius="10"
+                   HasShadow="True" BackgroundColor="#F2E5D3" BorderColor="#EDECE7">
+
+                <Frame.Shadow>
+                    <Shadow Brush="Black" Opacity="0.8" Offset="20,20" Radius="40"/>
+                </Frame.Shadow>
+
+                <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="10" VerticalOptions="Center">
+                    
+                    <Image Source="galleta.png"
+                           Grid.Row="0"
+                           WidthRequest="150" 
+                           HeightRequest="150" 
+                           Aspect="AspectFit"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                    
+                    <Label Text="Galletas de Chocolate"
+                           Grid.Row="1"
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           TextColor="#3D2C12"
+                           HorizontalOptions="Center"/>
+                    
+                    <Button Text="VER MAS"
+                            Grid.Row="2"
+                            BackgroundColor="#6F4E37"
+                            TextColor="White"
+                            FontSize="14"
+                            CornerRadius="10" 
+                            WidthRequest="100"  
+                            HorizontalOptions="Center"/>
+                </Grid>
+                
+            </Frame>
+
+            <!-- Snack 2-->
+            <Frame Padding="15" CornerRadius="10"
+                       HasShadow="True" BackgroundColor="#F2E5D3" BorderColor="#EDECE7">
+
+                           <Frame.Shadow>
+                                    <Shadow Brush="Black" Opacity="0.8" Offset="20,20" Radius="40"/>
+                            </Frame.Shadow>
+
+                    <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="10" VerticalOptions="Center">
+
+                        <Image Source="croasa.png"
+                               Grid.Row="0"
+                               WidthRequest="150" 
+                               HeightRequest="150" 
+                               Aspect="AspectFit"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+
+                        <Label Text="Croasant de nutella"
+                               Grid.Row="1"
+                               FontSize="20" 
+                               FontAttributes="Bold"
+                               TextColor="#3D2C12"
+                               HorizontalOptions="Center"/>
+
+                         <Button Text="VER MAS"
+                                Grid.Row="2"
+                                BackgroundColor="#6F4E37"
+                                TextColor="White"
+                                FontSize="14"
+                                CornerRadius="10" 
+                                WidthRequest="100"  
+                                HorizontalOptions="Center"/>
+                    </Grid>
+
+            </Frame>
+
+            <!-- Snack 3-->
+            <Frame Padding="15" CornerRadius="10"
+           HasShadow="True" BackgroundColor="#F2E5D3" BorderColor="#EDECE7">
+
+                <Frame.Shadow>
+                    <Shadow Brush="Black" Opacity="0.8" Offset="20,20" Radius="40"/>
+                </Frame.Shadow>
+
+                <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="10" VerticalOptions="Center">
+
+                    <Image Source="sandwich.png"
+                   Grid.Row="0"
+                   WidthRequest="150" 
+                   HeightRequest="150" 
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+                    <Label Text="Sandiwch de Jamon"
+                   Grid.Row="1"
+                   FontSize="20" 
+                   FontAttributes="Bold"
+                   TextColor="#3D2C12"
+                   HorizontalOptions="Center"/>
+
+                    <Button Text="VER MAS"
+                    Grid.Row="2"
+                    BackgroundColor="#6F4E37"
+                    TextColor="White"
+                    FontSize="14"
+                    CornerRadius="10" 
+                    WidthRequest="100"  
+                    HorizontalOptions="Center"/>
+                </Grid>
+
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

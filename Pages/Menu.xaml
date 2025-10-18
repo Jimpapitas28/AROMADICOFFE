@@ -8,5 +8,16 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Button Text="VER snacks"
+         BackgroundColor="#6F4E37"
+         TextColor="White"
+         FontSize="14"
+         CornerRadius="10" 
+         WidthRequest="80" 
+         VerticalOptions="Center" 
+         HorizontalOptions="End"
+         Clicked="Snacks_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

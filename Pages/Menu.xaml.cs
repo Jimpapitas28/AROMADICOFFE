@@ -6,4 +6,9 @@ public partial class Menu : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Snacks_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Snacks());
+    }
 }

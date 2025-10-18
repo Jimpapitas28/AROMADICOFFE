@@ -71,7 +71,9 @@
             ContentTemplate="{DataTemplate local:Home}"
             Route="Home"
             Icon="logo1.png"
-            Shell.NavBarIsVisible="False"/>
+            Shell.BackgroundColor="#FBF7F0" 
+            Shell.TitleColor="Black"   
+            Shell.ForegroundColor="Black"/>
 
         <ShellContent
             Title="NUESTRO MENÚ"
