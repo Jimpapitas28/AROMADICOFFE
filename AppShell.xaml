@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:AROMADICOFFE.Pages"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="False"
+    BackgroundColor="#fff6ed"
     Title="">
 
     <Shell.FlyoutBackgroundColor>

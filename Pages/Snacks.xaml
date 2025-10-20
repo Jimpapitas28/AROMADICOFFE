@@ -44,7 +44,7 @@
                             TextColor="White"
                             FontSize="14"
                             CornerRadius="10" 
-                            WidthRequest="100"  
+                            WidthRequest="150"  
                             HorizontalOptions="Center"/>
                 </Grid>
                 
@@ -81,7 +81,7 @@
                                 TextColor="White"
                                 FontSize="14"
                                 CornerRadius="10" 
-                                WidthRequest="100"  
+                                WidthRequest="150"  
                                 HorizontalOptions="Center"/>
                     </Grid>
 
@@ -118,8 +118,45 @@
                     TextColor="White"
                     FontSize="14"
                     CornerRadius="10" 
-                    WidthRequest="100"  
+                    WidthRequest="150"  
                     HorizontalOptions="Center"/>
+                </Grid>
+
+            </Frame>
+
+            <!-- Snack 4-->
+            <Frame Padding="15" CornerRadius="10"
+                    HasShadow="True" BackgroundColor="#F2E5D3" BorderColor="#EDECE7">
+
+                <Frame.Shadow>
+                    <Shadow Brush="Black" Opacity="0.8" Offset="20,20" Radius="40"/>
+                </Frame.Shadow>
+
+                <Grid RowDefinitions="Auto, Auto, Auto" RowSpacing="10" VerticalOptions="Center">
+
+                    <Image Source="bowl.png"
+                        Grid.Row="0"
+                        WidthRequest="150" 
+                        HeightRequest="150" 
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+
+                    <Label Text="Bowl de frutas "
+                        Grid.Row="1"
+                        FontSize="20" 
+                        FontAttributes="Bold"
+                        TextColor="#3D2C12"
+                        HorizontalOptions="Center"/>
+
+                    <Button Text="VER MAS"
+                         Grid.Row="2"
+                         BackgroundColor="#6F4E37"
+                         TextColor="White"
+                         FontSize="14"
+                         CornerRadius="10" 
+                         WidthRequest="150"  
+                         HorizontalOptions="Center"/>
                 </Grid>
 
             </Frame>

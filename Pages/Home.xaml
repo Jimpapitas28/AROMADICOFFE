@@ -49,9 +49,10 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Frame Margin="20, 0, 20, 5" Padding="10" CornerRadius="25" HasShadow="True">
+            <Frame Margin="20, 0, 20, 5" Padding="10" CornerRadius="25" HasShadow="True" BackgroundColor="#f1EADA">
                 <HorizontalStackLayout Spacing="10">
                     <Entry x:Name="SearchEntry"
+                           BackgroundColor="#f1EADA"
                            Placeholder="Buscar café, postre o promoción..."
                            HorizontalOptions="FillAndExpand"
                            ClearButtonVisibility="WhileEditing"

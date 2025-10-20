@@ -2,8 +2,204 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AROMADICOFFE.Pages.Menu"
+             BackgroundColor="#fff6ed"
              Title="">
-    <VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="15">
+            
+            <Label Text="NUESTRO MENÚ" 
+                   FontSize="Title" 
+                   FontAttributes="Bold"
+                   TextColor="#333333"
+                   Padding="10"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"/>
+            
+            <Grid ColumnSpacing="15" ColumnDefinitions="*,*"
+                  RowDefinitions="Auto, Auto" RowSpacing="15">
+
+                <Border Grid.Column="0" Grid.Row="0"
+                    BackgroundColor="#0F0707"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 18" 
+                    Padding="0">
+
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="5,5" Radius="10" Opacity="0.5" />
+                    </Border.Shadow>
+
+                    <Grid RowDefinitions="*, Auto" RowSpacing="0">
+
+                        <Image Source="men1.jpg"
+                               Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Aspect="AspectFill"
+                               VerticalOptions="FillAndExpand"
+                               Opacity="0.8"/>
+                        
+                        <VerticalStackLayout Grid.Row="1" Padding="10" Spacing="2">
+                            
+                            <Label Text="CAFÉS CALIENTES" 
+                                   FontSize="23" 
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Button Text="Ver"
+                                  BackgroundColor="#ccbdad"
+                                  TextColor="#24130c"
+                                  FontSize="20"
+                                  FontAttributes="Bold"
+                                  CornerRadius="15" 
+                                  WidthRequest="120"
+                                  Margin="10"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center"
+                                  Clicked="CafesCalientes_Clicked"/>
+
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                
+                <!--Tarjeta 2-->
+                <Border Grid.Column="1" Grid.Row="0"
+                        BackgroundColor="#0F0707"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 18" 
+                        Padding="0">
+
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="5,5" Radius="10" Opacity="0.5" />
+                    </Border.Shadow>
+
+                    <Grid RowDefinitions="*, Auto" RowSpacing="0">
+
+                        <Image Source="men2.jpg"
+                               Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Aspect="AspectFill"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Opacity="0.8"/>
+
+                        <VerticalStackLayout Grid.Row="1" Padding="10" Spacing="2">
+
+                            <Label Text="CAFÉS FRIOS" 
+                                   FontSize="23" 
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Button Text="Ver"
+                                  BackgroundColor="#ccbdad"
+                                  TextColor="#24130c"
+                                  FontSize="20"
+                                  FontAttributes="Bold"
+                                  CornerRadius="15" 
+                                  WidthRequest="120"
+                                  Margin="10"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center"
+                                  Clicked="CafesCalientes_Clicked"/>
+
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!--TARJETA THREE-->
+                <Border Grid.Column="0" Grid.Row="1"
+                        BackgroundColor="#0F0707"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 18" 
+                        Padding="0">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="5,5" Radius="10" Opacity="0.5" />
+                    </Border.Shadow>
+
+                    <Grid RowDefinitions="*, Auto" RowSpacing="0">
+
+                        <Image Source="men3.jpg"
+                               Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Aspect="AspectFill"
+                               HeightRequest="300"
+                               VerticalOptions="FillAndExpand"
+                               Opacity="0.8"/>
+
+                        <VerticalStackLayout Grid.Row="1" Padding="10" Spacing="2">
+
+                            <Label Text="POSTRES" 
+                                   FontSize="23" 
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Button Text="Ver"
+                                  BackgroundColor="#ccbdad"
+                                  TextColor="#24130c"
+                                  FontSize="20"
+                                  FontAttributes="Bold"
+                                  CornerRadius="15" 
+                                  WidthRequest="120"
+                                  Margin="10"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center"
+                                  Clicked="CafesCalientes_Clicked"/>
+
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="1"
+                        BackgroundColor="#0F0707"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 18" 
+                        Padding="0">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="5,5" Radius="10" Opacity="0.5" />
+                    </Border.Shadow>
+
+                    <Grid RowDefinitions="*, Auto" RowSpacing="0">
+
+                        <Image Source="men4.jpg"
+                               Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Aspect="AspectFill"
+                               HeightRequest="300"
+                               VerticalOptions="FillAndExpand"
+                               Opacity="0.9"/>
+
+                        <VerticalStackLayout Grid.Row="1" Padding="10" Spacing="2">
+
+                            <Label Text="SNACKS Y OTROS" 
+                                   FontSize="23" 
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Button Text="Ver"
+                                  BackgroundColor="#ccbdad"
+                                  TextColor="#24130c"
+                                  FontSize="20"
+                                  FontAttributes="Bold"
+                                  CornerRadius="15" 
+                                  WidthRequest="120"
+                                  Margin="10"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center"
+                                  Clicked="CafesCalientes_Clicked"/>
+
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+  
+    
+    <!--<VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
@@ -14,10 +210,11 @@
          TextColor="White"
          FontSize="14"
          CornerRadius="10" 
-         WidthRequest="80" 
+         WidthRequest="150" 
          VerticalOptions="Center" 
-         HorizontalOptions="End"
+         HorizontalOptions="Center"
          Clicked="Snacks_Clicked"/>
 
-    </VerticalStackLayout>
+       
+    </VerticalStackLayout>-->
 </ContentPage>

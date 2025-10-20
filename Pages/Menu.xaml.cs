@@ -7,8 +7,15 @@ public partial class Menu : ContentPage
 		InitializeComponent();
 	}
 
+    private void CafesCalientes_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new CoffeHot());
+    }
     private void Snacks_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new Snacks());
     }
+    
+
+
 }
