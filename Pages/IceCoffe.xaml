@@ -2,11 +2,161 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AROMADICOFFE.Pages.IceCoffe"
-             Title="">
-    <VerticalStackLayout>
-        <Label 
-            Text="Cafés Fríos"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title=""
+             BackgroundColor="#F2E5D3">
+
+    <ContentPage.Resources>
+        <Color x:Key="PrimaryCoffee">#4A3F35</Color>
+        <Color x:Key="AccentGold">#A4814C</Color>
+        <Color x:Key="LightBackground">#E0D1C0</Color>
+        <Color x:Key="SubtitleColor">#8C7A6D</Color>
+        <Color x:Key="SelectedCategoryColor">#886140</Color>
+        <Style x:Key="BuyButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource AccentGold}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="WidthRequest" Value="150" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <StackLayout Margin="0, -25, 0, -55">
+                <Image Source="user_icon.png" HorizontalOptions="Start" WidthRequest="30" HeightRequest="30"/>
+                <Label Text="Cafés Frios" FontSize="35" FontFamily="Courgette" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Image Source="cart_icon.png" Grid.Column="1" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="0,0,10,0"/>
+                <Image Source="heart_icon.png" Grid.Column="2" HorizontalOptions="End" WidthRequest="30" HeightRequest="30"/>
+            </StackLayout>
+
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Padding="0, 0, 0, 0">
+                <HorizontalStackLayout Spacing="10" x:Name="CategoryButtonsLayout">
+                    <Button x:Name="Todos" Text="Todos" BackgroundColor="{StaticResource SelectedCategoryColor}" TextColor="White" CornerRadius="20" Padding="15,8" Clicked="OnCategoryClicked"/>
+                    <Button x:Name="SpecialtyButton" Text="Especialidades" BackgroundColor="{StaticResource LightBackground}" TextColor="{StaticResource PrimaryCoffee}" CornerRadius="20" Padding="15,8" Clicked="OnCategoryClicked"/>
+                    <Button x:Name="ClassicsButton" Text="Clásicos" BackgroundColor="{StaticResource LightBackground}" TextColor="{StaticResource PrimaryCoffee}" CornerRadius="20" Padding="15,8" Clicked="OnCategoryClicked"/>
+                    <Button x:Name="HomeButton" Text="De la Casa" BackgroundColor="{StaticResource LightBackground}" TextColor="{StaticResource PrimaryCoffee}" CornerRadius="20" Padding="15,8" Clicked="OnCategoryClicked"/>
+                </HorizontalStackLayout>
+            </ScrollView>
+
+            <VerticalStackLayout x:Name="ProductsContainer" Spacing="20">
+
+                <Grid x:Name="AmericanoGrid" WidthRequest="350" HorizontalOptions="Center" IsVisible="False">
+                    <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
+                            <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Image Source="americano2.png" WidthRequest="115" HeightRequest="115"/>
+                            </Frame>
+                            <Label Grid.Column="1" Text="Américano Frio" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="$12.50" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="Elixir Matinal" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
+                            <Button Grid.Column="1" Grid.Row="3" Text="COMPRAR" Style="{StaticResource BuyButtonStyle}"/>
+                        </Grid>
+                    </Frame>
+                    <ImageButton x:Name="FavStarAmericano" 
+                                 Source="star_outline_icon.png"  
+                                 WidthRequest="20" 
+                                 HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End" 
+                                 VerticalOptions="Start"
+                                 Margin="0, 10, 10, 0"
+                                 Clicked="OnFavoriteStarClicked" />
+                </Grid>
+                <Grid x:Name="MochaGrid" WidthRequest="350" HorizontalOptions="Center" IsVisible="False">
+                    <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
+                            <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Image Source="moca2.jpg" WidthRequest="115" HeightRequest="115"/>
+                            </Frame>
+                            <Label Grid.Column="1" Text="Moca Frio de la Casa" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="Esencia Pura" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="$10.75" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                            <Button Grid.Column="1" Grid.Row="3" Text="COMPRAR" Style="{StaticResource BuyButtonStyle}"/>
+                        </Grid>
+                    </Frame>
+                    <ImageButton x:Name="FavStarMocha" 
+                                 Source="star_outline_icon.png"  
+                                 WidthRequest="20" 
+                                 HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End" 
+                                 VerticalOptions="Start"
+                                 Margin="0, 10, 10, 0"
+                                 Clicked="OnFavoriteStarClicked" />
+                </Grid>
+
+                <Grid x:Name="CarameloGrid" WidthRequest="350" HorizontalOptions="Center">
+                    <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
+                            <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Image Source="caramelo.png" WidthRequest="115" HeightRequest="115"/>
+                            </Frame>
+                            <Label Grid.Column="1" Text="Frapuchino de Caramelo" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="Despertar Intenso" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="$15.00" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                            <Button Grid.Column="1" Grid.Row="3" Text="COMPRAR" Style="{StaticResource BuyButtonStyle}"/>
+                        </Grid>
+                    </Frame>
+                    <ImageButton x:Name="FavStarCaramelo" 
+                                 Source="star_outline_icon.png"  
+                                 WidthRequest="20" 
+                                 HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End" 
+                                 VerticalOptions="Start"
+                                 Margin="0, 10, 10, 0"
+                                 Clicked="OnFavoriteStarClicked" />
+                </Grid>
+                <Grid x:Name="FresaGrid" WidthRequest="350" HorizontalOptions="Center">
+                    <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
+                            <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Image Source="strawberry.jpg" WidthRequest="115" HeightRequest="115"/>
+                            </Frame>
+                            <Label Grid.Column="1" Text="Frappuchino de Fresa" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="Esencia Pura" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="$10.75" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                            <Button Grid.Column="1" Grid.Row="3" Text="COMPRAR" Style="{StaticResource BuyButtonStyle}" />
+                        </Grid>
+                    </Frame>
+                    <ImageButton x:Name="FavStarFresa" 
+                                 Source="star_outline_icon.png"  
+                                 WidthRequest="20" 
+                                 HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End" 
+                                 VerticalOptions="Start"
+                                 Margin="0, 10, 10, 0"
+                                 Clicked="OnFavoriteStarClicked" />
+                </Grid>
+
+                <Grid x:Name="ChocolateGrid" WidthRequest="350" HorizontalOptions="Center">
+                <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
+                        <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Image Source="chocolate.png" WidthRequest="115" HeightRequest="115" VerticalOptions="Center"/>
+                        </Frame>
+                        <Label Grid.Column="1" Text="Frappé de Chocolate" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="Esencia Pura" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
+                        <Label Grid.Column="1" Grid.Row="2" Text="$10.75" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                        <Button Grid.Column="1" Grid.Row="3" Text="COMPRAR" Style="{StaticResource BuyButtonStyle}"/>
+                    </Grid>
+                </Frame>
+                <ImageButton x:Name="FavStarChocolate" 
+                                 Source="star_outline_icon.png"  
+                                 WidthRequest="20" 
+                                 HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End" 
+                                 VerticalOptions="Start"
+                                 Margin="0, 10, 10, 0"
+                                 Clicked="OnFavoriteStarClicked" />
+                </Grid>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

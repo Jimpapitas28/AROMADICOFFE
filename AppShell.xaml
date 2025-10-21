@@ -95,7 +95,7 @@
             Icon="logo1.png"/>
 
         <ShellContent
-            Title="CONFIGURACIÓN"
+            Title="MI PERFIL"
             ContentTemplate="{DataTemplate local:Miperfil}"
             Route="Miperfil"
             Icon="logo1.png"/>

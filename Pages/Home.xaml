@@ -43,7 +43,7 @@
 
             <Grid Padding="20, 10" RowDefinitions="Auto, Auto">
                 <Image Grid.Row="0" HorizontalOptions="End" Source="perfil.png" HeightRequest="40" WidthRequest="40" Aspect="AspectFill" />
-                <VerticalStackLayout Grid.Row="1" Spacing="2">
+                <VerticalStackLayout Grid.Row="0" Spacing="2">
                     <Label Text="¡Buenos días!" FontSize="16" TextColor="Gray" />
                     <Label Text="¿Qué te apetece hoy?" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource BrandColor}" />
                 </VerticalStackLayout>

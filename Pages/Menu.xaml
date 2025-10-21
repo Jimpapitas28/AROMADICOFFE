@@ -9,10 +9,11 @@
         <VerticalStackLayout Margin="20" Spacing="15">
             
             <Label Text="NUESTRO MENÚ" 
-                   FontSize="Title" 
+                   FontSize="Title"
+                   FontFamily="Courgette"
                    FontAttributes="Bold"
                    TextColor="#333333"
-                   Padding="10"
+                   Margin="-5"
                    VerticalTextAlignment="Center"
                    HorizontalOptions="Center"/>
             
@@ -101,7 +102,7 @@
                                   Margin="10"
                                   VerticalOptions="Center" 
                                   HorizontalOptions="Center"
-                                  Clicked="CafesCalientes_Clicked"/>
+                                  Clicked="CafesFrios_Clicked"/>
 
                         </VerticalStackLayout>
                     </Grid>
@@ -188,7 +189,7 @@
                                   Margin="10"
                                   VerticalOptions="Center" 
                                   HorizontalOptions="Center"
-                                  Clicked="CafesCalientes_Clicked"/>
+                                  Clicked="Snacks_Clicked"/>
 
                         </VerticalStackLayout>
                     </Grid>
