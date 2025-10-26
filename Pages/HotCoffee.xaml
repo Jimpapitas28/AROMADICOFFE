@@ -47,7 +47,7 @@
                     <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
                         <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
                             <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
-                                <Image Source="Cappuccino.jpeg" WidthRequest="115" HeightRequest="115"/>
+                                <Image Source="capuccino.png" WidthRequest="115" HeightRequest="115"/>
                             </Frame>
                             <Label Grid.Column="1" Text="Cappuccino" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
                             <Label Grid.Column="1" Grid.Row="2" Text="$12.50" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
@@ -69,7 +69,7 @@
                     <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
                         <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
                             <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
-                                <Image Source="moca2.jpg" WidthRequest="115" HeightRequest="115"/>
+                                <Image Source="espresso.png" WidthRequest="115" HeightRequest="115"/>
                             </Frame>
                             <Label Grid.Column="1" Text="Espresso de Caramelo" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
                             <Label Grid.Column="1" Grid.Row="1" Text="Final cálido que permanece" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
@@ -92,7 +92,7 @@
                     <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
                         <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
                             <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
-                                <Image Source="caramelo.png" WidthRequest="115" HeightRequest="115"/>
+                                <Image Source="latte.png" WidthRequest="115" HeightRequest="115"/>
                             </Frame>
                             <Label Grid.Column="1" Text="Latte de Canela" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
                             <Label Grid.Column="1" Grid.Row="1" Text="Experiencia reconfortante y aromática" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
@@ -114,7 +114,7 @@
                     <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
                         <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
                             <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
-                                <Image Source="strawberry.jpg" WidthRequest="115" HeightRequest="115"/>
+                                <Image Source="café bombón.jpg" WidthRequest="115" HeightRequest="115"/>
                             </Frame>
                             <Label Grid.Column="1" Text="Café Bombón" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
                             <Label Grid.Column="1" Grid.Row="1" Text="Aroma profundo y recien hecho" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
@@ -137,7 +137,7 @@
                     <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True" Padding="15">
                         <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
                             <Frame Grid.RowSpan="4" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="115" HeightRequest="115" HorizontalOptions="Start" VerticalOptions="Center">
-                                <Image Source="chocolate.png" WidthRequest="115" HeightRequest="115" VerticalOptions="Center"/>
+                                <Image Source="cafe latte clasico.png" WidthRequest="115" HeightRequest="115" VerticalOptions="Center"/>
                             </Frame>
                             <Label Grid.Column="1" Text="Café Latte Clásico" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
                             <Label Grid.Column="1" Grid.Row="1" Text="Trradicion y versatilidad/" FontSize="14" TextColor="{StaticResource SubtitleColor}"/>
