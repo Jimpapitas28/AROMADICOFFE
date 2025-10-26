@@ -84,8 +84,8 @@
 
         <ShellContent
             Title="MI CARRITO"
-            ContentTemplate="{DataTemplate local:Carritos}"
-            Route="Carritos"
+            ContentTemplate="{DataTemplate local:Compras}"
+            Route="Compras"
             Icon="logo1.png"/>
 
         <ShellContent

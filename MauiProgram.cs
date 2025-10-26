@@ -16,6 +16,9 @@ namespace AROMADICOFFE
                     fonts.AddFont("CormorantGaramond-VariableFont_wght.ttf", "MiFuente");
                     fonts.AddFont("Courgette-Regular.ttf", "Courgette");
                     fonts.AddFont("Poppins-Regular.ttf", "Poppins");
+                    fonts.AddFont("Poppins-Medium.ttf", "PoppinsMedium");
+                    fonts.AddFont("Poppins-Bold.ttf", "PoppinsBold");
+                    fonts.AddFont("Poppins-ExtraBold.ttf", "PoppinsExtraBold");
                 });
 
 #if DEBUG

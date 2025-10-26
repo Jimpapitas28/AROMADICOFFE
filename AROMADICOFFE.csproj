@@ -57,15 +57,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Resources\Images\MauiProgram.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\Carrito.xaml.cs">
-	    <DependentUpon>Carrito.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Pages\HotCoffee.xaml.cs">
 	    <DependentUpon>HotCoffee.xaml</DependentUpon>
 	  </Compile>
@@ -75,16 +76,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\Carrito.xaml">
+	  <MauiXaml Update="Pages\CafesHeladitos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Compras.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\HotCoffee.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Home.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\IceCoffe.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Login.xaml">

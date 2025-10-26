@@ -18,7 +18,7 @@ public partial class Menu : ContentPage
 
     private void CafesFrios_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new IceCoffe());
+        Navigation.PushAsync(new CafesHeladitos());
     }
 
 }

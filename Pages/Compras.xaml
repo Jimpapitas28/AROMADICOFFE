@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AROMADICOFFE.Pages"
+             xmlns:models="clr-namespace:AROMADICOFFE.Models"
+             x:Class="AROMADICOFFE.Pages.Compras"
+             Title="Mi Carrito"
+             BackgroundColor="#F2E5D3">
+
+    <ContentPage.Resources>
+        <Color x:Key="PrimaryCoffee">#4A3F35</Color>
+        <Color x:Key="AccentGold">#A4814C</Color>
+        <Color x:Key="LightBackground">#E0D1C0</Color>
+        <Color x:Key="SubtitleColor">#8C7A6D</Color>
+
+        <DataTemplate x:Key="CartItemTemplate" x:DataType="models:CartItem">
+            <Grid WidthRequest="350" RowSpacing="3" HorizontalOptions="Center" Margin="0, 9, 0, 9">
+                <Frame BackgroundColor="White" CornerRadius="20"  HasShadow="True" Padding="15">
+                    <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="5">
+                        <Frame Grid.RowSpan="3" CornerRadius="15" Padding="0" IsClippedToBounds="True" BackgroundColor="{StaticResource LightBackground}" WidthRequest="80" HeightRequest="80" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Image Source="{Binding Product.ImageSource}" WidthRequest="80" HeightRequest="80"/>
+                        </Frame>
+                        <Label Grid.Column="1" Text="{Binding Product.Name}" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding ItemDetails}" FontSize="12" TextColor="{StaticResource SubtitleColor}"/>
+                        <Label Grid.Column="1" Grid.Row="2" Text="{Binding FormattedTotalItemPrice}" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}" VerticalOptions="Center"/>
+                        <ImageButton Grid.Column="2" Grid.RowSpan="3" 
+                                     Source="trash_icon.png" 
+                                     BackgroundColor="Transparent" 
+                                     WidthRequest="18" 
+                                     HeightRequest="18" 
+                                     HorizontalOptions="End" 
+                                     VerticalOptions="Center"
+                                     Clicked="RemoveItemClicked"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0" Padding="0">
+            <Label Text="Mis Compras🛒" 
+                   FontSize="35" 
+                   FontFamily="Courgette"
+                   TextColor="{StaticResource PrimaryCoffee}"
+                   HorizontalOptions="Center" 
+                   Margin="20, 20, 20, 10"/>
+
+            <Label x:Name="EmptyCartMessageLabel"
+                   Text="Tu carrito está vacío. ¡Es hora de ordenar un café!"
+                   TextColor="{StaticResource SubtitleColor}"
+                   HorizontalOptions="Center"
+                   Margin="0, 50, 0, 0"
+                   IsVisible="False" />
+
+            <CollectionView x:Name="CartCollectionView" 
+                            ItemTemplate="{StaticResource CartItemTemplate}">
+            </CollectionView>
+
+            <Frame x:Name="TotalSummaryFrame"
+                   BackgroundColor="White" 
+                   Padding="20" 
+                   CornerRadius="10" 
+                   Margin="20, 10, 20, 20" 
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Subtotal:" HorizontalOptions="Start" TextColor="{StaticResource PrimaryCoffee}"/>
+                        <Label x:Name="SubtotalLabel" Text="$0.00" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Envío:" HorizontalOptions="Start" TextColor="{StaticResource PrimaryCoffee}"/>
+                        <Label Text="GRATIS" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource AccentGold}"/>
+                    </HorizontalStackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="{StaticResource SubtitleColor}" Margin="0, 5"/>
+                    <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Total:" FontSize="18" HorizontalOptions="Start" TextColor="{StaticResource PrimaryCoffee}"/>
+                        <Label x:Name="TotalLabel" Text="$0.00" FontSize="18" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource PrimaryCoffee}"/>
+                    </HorizontalStackLayout>
+
+                    <Button Text="Proceder al Pago" BackgroundColor="{StaticResource AccentGold}" TextColor="White" CornerRadius="10" HeightRequest="50" Margin="0, 15, 0, 0"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
